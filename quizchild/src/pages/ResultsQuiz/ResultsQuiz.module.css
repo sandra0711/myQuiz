@@ -1,0 +1,39 @@
+.ResultsQuiz {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  color: #fff;
+  border: 5px solid #ff4949;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 0 10px;
+}
+
+.ResultsQuiz ul {
+  list-style: none;
+}
+
+.ResultsQuiz li {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.correct {
+  color: rgb(10, 250, 10);
+}
+
+.error {
+  color: rgb(255, 0, 0)
+}
+
+.total {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 0;
+  color:rgb(10, 250, 10)
+}
+
+.retry {
+  margin-left: 40px;
+}

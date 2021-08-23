@@ -1,0 +1,26 @@
+.ActiveQuiz {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  color: #fff;
+  border: 5px solid #ff4949;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 0 10px;
+}
+
+.Question {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.Question span {
+  width: 400px;
+}
+.ActiveQuiz ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

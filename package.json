@@ -1,0 +1,20 @@
+{
+  "name": "myquiz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "build": "yarn && cd quizchild && yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandra0711/myQuiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sandra0711/myQuiz/issues"
+  },
+  "homepage": "https://github.com/sandra0711/myQuiz#readme"
+}
