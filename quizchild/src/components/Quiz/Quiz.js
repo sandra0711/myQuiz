@@ -123,6 +123,7 @@ const Quiz = () => {
       {/* <img width="1600" height="900" src="https://trikky.ru/wp-content/blogs.dir/1/files/2020/06/03/peppa-pig.png" class="attachment-full size-full wp-post-image" alt="" loading="lazy" is_main_img="1" srcset="https://trikky.ru/wp-content/blogs.dir/1/files/2020/06/03/peppa-pig.png 1600w, https://trikky.ru/wp-content/blogs.dir/1/files/2020/06/03/peppa-pig-768x432.png 768w, https://trikky.ru/wp-content/blogs.dir/1/files/2020/06/03/peppa-pig-1536x864.png 1536w" sizes="(max-width: 1600px) 100vw, 1600px"></img> */}
       <img src="https://www.peppapig.com/wp-content/uploads/sites/3/2019/02/george_pig_splat.png" alt={"Свинка"}></img>
       <div className={classes.QuizWrapper}>
+        <img style={{ "width": "100px", "height": "120px" }} src="/img/PHOTO-2021-08-14-15-00-45.jpg" alt="Talia" />
         {state.isLast ?
           <>
             <h1>Результат игры</h1>
