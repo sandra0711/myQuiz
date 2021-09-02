@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-
   "scripts": {
-    "start": "node server/app.js",
-    "build": "yarn && cd quizchild && yarn build"
+    "start": "run-p server client",
+    "server": "cd server && node app",
+    "client": "cd quizchild && yarn start"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/sandra0711/myQuiz/issues"
   },
-  "homepage": "https://github.com/sandra0711/myQuiz#readme"
+  "homepage": "https://github.com/sandra0711/myQuiz#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
 }

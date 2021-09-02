@@ -7,7 +7,6 @@ const Auth = () => {
   let [isFormValid, setIsFormValid] = useState(false);
   let [inputsValue, setInputsValue] = useState({
     name: {
-      id: 'name',
       name: 'name',
       label: 'Имя',
       inputValue: '',
@@ -19,7 +18,6 @@ const Auth = () => {
       }
     },
     age: {
-      id: 'age',
       name: 'age',
       label: 'Возраст(лет)',
       inputValue: '',
@@ -32,7 +30,6 @@ const Auth = () => {
       },
     },
     img: {
-      id: 'img',
       name: 'img',
       label: 'Фото (имя файла)',
       inputValue: '',
@@ -44,7 +41,6 @@ const Auth = () => {
       },
     },
     pass: {
-      id: 'pass',
       name: 'pass',
       label: 'Пароль',
       inputValue: '',
@@ -97,8 +93,8 @@ const Auth = () => {
     event.preventDefault();
   }
 
-  const signupHandler = async () => {
-    const response = await fetch('/user/signup', {
+  const signinHandler = async () => {
+    const response = await fetch('/auth', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -114,26 +110,57 @@ const Auth = () => {
   return (
     <div className={classes.Auth}>
       <div>
-        <h1>Мы хотим познакомиться с тобой поближе!</h1>
+        <h1>Мы хотим знать все о тебе!</h1>
         <form className={classes.AuthForm} onSubmit={submitHandler}>
-          {Object.keys(inputsValue).map(fieldName =>
-            <Input
-              key={Math.random()}
-              id={inputsValue[fieldName].id}
-              label={inputsValue[fieldName].label}
-              name={inputsValue[fieldName].name}
-              value={inputsValue[fieldName].inputValue}
-              changeHandler={changeHandler}
-              valid={inputsValue[fieldName].valid}
-              touched={inputsValue[fieldName].touched}
-              shouldValidate={!!inputsValue[fieldName].validation}
-              errorMessage={inputsValue[fieldName].errorMessage}
-            />
-          )}
-
+          <Input
+            id={'name'}
+            label={'Имя'}
+            name={'name'}
+            value={inputsValue.name.inputValue}
+            changeHandler={changeHandler}
+            valid={inputsValue.name.valid}
+            touched={inputsValue.name.touched}
+            shouldValidate={!!inputsValue.name.validation}
+            errorMessage={inputsValue.name.errorMessage}
+          />
+          <Input
+            id={'age'}
+            label={'Возраст (лет)'}
+            name={'age'}
+            value={inputsValue.age.inputValue}
+            inputType='number'
+            changeHandler={changeHandler}
+            valid={inputsValue.age.valid}
+            touched={inputsValue.age.touched}
+            shouldValidate={!!inputsValue.age.validation}
+            errorMessage={inputsValue.age.errorMessage}
+          />
+          <Input
+            id={'img'}
+            label={'Фото'}
+            name={'img'}
+            value={inputsValue.img.inputValue}
+            changeHandler={changeHandler}
+            valid={inputsValue.img.valid}
+            touched={inputsValue.img.touched}
+            shouldValidate={!!inputsValue.img.validation}
+            errorMessage={inputsValue.img.errorMessage}
+          />
+          <Input
+            id={'pass'}
+            label={'Пароль'}
+            name={'pass'}
+            value={inputsValue.pass.inputValue}
+            changeHandler={changeHandler}
+            inputType='password'
+            valid={inputsValue.pass.valid}
+            touched={inputsValue.pass.touched}
+            shouldValidate={!!inputsValue.pass.validation}
+            errorMessage={inputsValue.pass.errorMessage}
+          />
           <Button
             type='primary'
-            onClick={signupHandler}
+            onClick={signinHandler}
             disabled={!isFormValid}
           >
             Зарегистрироваться

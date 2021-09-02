@@ -1,29 +1,26 @@
 import React from 'react';
 import classes from './Input.module.css';
 
-const isInvalid = ({ valid, shouldValidation, isTouch }) => {
-  return (!valid && shouldValidation && isTouch);
+const isInvalid = ({ valid, touched, shouldValidate }) => {
+  return (!valid && shouldValidate && touched);
 }
 const Input = (props) => {
   const cls = [classes.Input];
   const inputType = props.inputType || 'text';
-  const htmlFor = `${inputType}-${Math.random()}`;
 
-  if (isInvalid(props)) {
-    cls.push(classes.invalid)
-  }
+  if (isInvalid(props)) { cls.push(classes.invalid) };
 
   return (
     <div className={cls.join(' ')}>
-      <label htmlFor={htmlFor}>{props.label}</label>
+      <label htmlFor={props.id}>{props.label}</label>
       <input
         type={inputType}
-        id={htmlFor}
+        id={props.id}
         name={props.name}
         value={props.value}
-        onChange={props.changeHandler}
+        onChange={(event) => { props.changeHandler(props.name, event.target.value) }}
       />
-      {isInvalid(props) ? <span>{props.errorMessage} || 'Введите имя и пароль'</span> : null}
+      {isInvalid(props) ? <span>{props.errorMessage}</span> : null}
     </div>
   );
 }

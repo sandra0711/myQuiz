@@ -13,7 +13,7 @@ const Drawer = ({ isMenuOpen, closeMenu }) => {
   const links = [
     { id: 1, to: '/', label: 'Выбирай игру!', exact: true },
     { id: 2, to: '/auth', label: 'Авторизация', exact: false },
-    { id: 3, to: '/quiz-creator', label: 'Создать тест', exact: false },
+    { id: 3, to: '/choose-game', label: 'Cоздание тестов (только для родителей!)', exact: false },
   ];
 
   return (
